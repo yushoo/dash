@@ -1,0 +1,25 @@
+{
+  "name": "dash",
+  "version": "1.0.0",
+  "description": "An anonymous chat app built with feather.js, socket.io, express, and react.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henryyuhsiufeng/dash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henryyuhsiufeng/dash/issues"
+  },
+  "homepage": "https://github.com/henryyuhsiufeng/dash#readme",
+  "dependencies": {
+    "@feathersjs/express": "^4.3.11",
+    "@feathersjs/feathers": "^4.3.11",
+    "@feathersjs/socketio": "^4.3.11",
+    "moment": "^2.24.0"
+  }
+}
