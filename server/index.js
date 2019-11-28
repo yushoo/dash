@@ -17,13 +17,14 @@ io.on('connection', (socket) => {
     socket.on('join', ({ name, room }, callback) => {
         console.log(name, room);
 
-        const error = true;
+        //errorhandling will be implemented later
+        // const error = true;
 
-        if(error){
-            callback({ error: 'error' });
-        }
+        // if(error){
+        //     callback({ error: 'error' });
+        // }
 
-        callback();
+        // callback();
     });
 
     socket.on('disconnect', () => {

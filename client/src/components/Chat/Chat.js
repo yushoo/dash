@@ -21,10 +21,15 @@ const Chat = ({ location }) => {
         setRoom(room);
         
         //fyi non es6 format { name: name, room: room}
-        socket.emit('join', { name, room }, ({ error }) => {
-            alert(error);
+        socket.emit('join', { name, room }, ({ }) => {
+            
         });
 
+        //turn of client instance of socket
+        return () => {
+            socket.emit('disconnect');
+            socket.off();
+        }
         //if ENDPOINT and location.search changed then we call useEffect function
     }, [ENDPOINT, location.search]);
 
