@@ -6,6 +6,7 @@ const addUser = ({id, name, room}) => {
     name = name.trim().toLowerCase();
     room = room.trim().toLowerCase();
 
+    //check all user stored in array users if the user has the same room and username
     const existingUser = users.find((user) => user.room === room
                                             && user.name === name);
     
@@ -24,8 +25,13 @@ const addUser = ({id, name, room}) => {
     return { user };
 }
 
-const removeUser = () => {
+const removeUser = (id) => {
+    const index = users.findIndex((user) => user.id === id);
 
+    //remove user if found in users array
+    if(index !== -1){
+        return users.splice(index, 1)[0];
+    }
 }
 
 const getUser = () => {
