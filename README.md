@@ -1,5 +1,5 @@
 # dash
-An anonymous chat app built with feather.js, socket.io, express, and react.js
+An anonymous chat app built with node.js, socket.io, express, and react.js
 
 ## The Goal
 My goal with this project is to learn how to use feather.js and socket.io and reinforce my skills in react.js while also implementing a chat app.

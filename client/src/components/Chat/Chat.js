@@ -43,6 +43,8 @@ const Chat = ({ location }) => {
     },
     //run only when messages array has changed 
     [messages]);
+    
+    //function for sending messages
 
     return (
         <h1>Chat</h1>
