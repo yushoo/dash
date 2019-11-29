@@ -8,6 +8,8 @@ const Chat = ({ location }) => {
     //states
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
     const ENDPOINT = 'localhost:5000';
 
     //Runs when chat component renders
@@ -32,6 +34,12 @@ const Chat = ({ location }) => {
         }
         //if ENDPOINT and location.search changed then we call useEffect function
     }, [ENDPOINT, location.search]);
+
+    userEffect(() => {
+        socket.on('message', (message) => {
+
+        });
+    });
 
     return (
         <h1>Chat</h1>
