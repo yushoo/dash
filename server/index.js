@@ -2,6 +2,8 @@ const express  = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 
+const { addUser, removeUser, getUser, getUsersInRoom } = require('./users.js');
+
 const PORT = process.env.PORT || 5000;
 
 const router = require('./router');
@@ -15,16 +17,27 @@ io.on('connection', (socket) => {
 
     //join is looked for when broadcasted in the client side
     socket.on('join', ({ name, room }, callback) => {
-        console.log(name, room);
+        //addUser returns two properties
+        const { error, user } = addUser({ id: socket.id, name, room });
+        
+        if(error){
+            return callback(error);
+        } else {
+            socket.emit( 'message', { user: 'admin', text: `${user.name}, welcome to the room ${user.room}` });
+            socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name}, has joined`});
+            socket.join(user.room);
+            
+            //no erros at this point so callback does nothing
+            callback();
+        }
+    });
 
-        //errorhandling will be implemented later
-        // const error = true;
+    socket.on('sendMessage', (message, callback) => {
+        const user = getUser(socket.id);
 
-        // if(error){
-        //     callback({ error: 'error' });
-        // }
+        io.to(user.room).prependListener('message', { user: user.name, text: message});
 
-        // callback();
+        callback();
     });
 
     socket.on('disconnect', () => {
