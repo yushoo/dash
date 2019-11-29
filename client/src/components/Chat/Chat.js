@@ -36,10 +36,13 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search]);
 
     userEffect(() => {
+        //listen for message from the backend
         socket.on('message', (message) => {
-
-        });
-    });
+            setMessages([...messages,message]);
+        })
+    },
+    //run only when messages array has changed 
+    [messages]);
 
     return (
         <h1>Chat</h1>
