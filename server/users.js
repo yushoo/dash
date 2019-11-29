@@ -34,10 +34,12 @@ const removeUser = (id) => {
     }
 }
 
-const getUser = () => {
-
+//get specific user based on unique id
+const getUser = (id) => {
+    return users.find((user) => user.id === id);
 }
 
-const getUsersInRoom = () => {
+//get all users from specific room
+const getUsersInRoom = (room) => {
 
 }
