@@ -14,7 +14,7 @@ npm install --save socket.io-client
 ```
 
 # Client and Server Side Example 
-This example is done with react.js
+This example is done without react.js
 #### Server (app.js)
 ```
 var app = require('http').createServer(handler)
