@@ -55,3 +55,4 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
 ## When NOT to use Websockets
 - When real time updates are not required
 - RESTful services are sufficient to get data from the server. (CRUD applications)
+
