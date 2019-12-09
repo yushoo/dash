@@ -16,7 +16,7 @@ npm install --save socket.io-client
 # Client and Server Side Example 
 This example is done without react.js
 #### Server (app.js)
-```
+```javascript
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
@@ -45,7 +45,7 @@ socket.on('my other event', function (data) {
 ```
 
 #### Client (index.html)
-```
+```javascript
 <script src="/socket.io/socket.io.js"></script>
 <script>
 var socket = io('http://localhost');
@@ -58,7 +58,7 @@ socket.on('news', function (data) {
 
 ## Using with Express (What I use to create my routes)
 #### Server (app.js)
-```
+```javascript
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -79,7 +79,7 @@ socket.on('my other event', function (data) {
 ```
 
 #### Client (index.html)
-```
+```javascript
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io.connect('http://localhost');
