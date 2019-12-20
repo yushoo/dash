@@ -70,9 +70,9 @@ const Chat = ({ location }) => {
     <div className="outerContainer">
       <div className="container">
         <div><p>WELCOME {name} TO {room}</p></div>
-          {/* {<InfoBar room={room} /> */}
-          {/* <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />  */}
+          <InfoBar room={room} />
+          // {/* <Messages messages={messages} name={name} />
+          // <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />  */}
           <input 
             value = {message}
             onChange = {(event) => setMessage(event.target.value)}
