@@ -15,10 +15,13 @@ const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
+  //string of curr message
   const [message, setMessage] = useState('');
+  //array of all messages of chat instance
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'localhost:5000';
 
+  //to connect to join component
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
@@ -34,8 +37,10 @@ const Chat = ({ location }) => {
     });
   }, [ENDPOINT, location.search]);
 
+  //to handle messages.
   useEffect(() => {
     socket.on('message', (message) => {
+      //adding message to all messages
       setMessages([...messages, message ]);
     });
 
@@ -43,11 +48,12 @@ const Chat = ({ location }) => {
       setUsers(users);
     })
 
+    //disconnect event. Server will be listening for disconnect event
     return () => {
       socket.emit('disconnect');
-
       socket.off();
     }
+    // only run this useEffect when the messages array is changed
   }, [messages])
 
   const sendMessage = (event) => {
@@ -61,10 +67,15 @@ const Chat = ({ location }) => {
   return (
     <div className="outerContainer">
       <div className="container">
-<div><p>WELCOM {name} TO {room}</p></div>
-          {/* <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} /> */}
+        <div><p>WELCOME {name} TO {room}</p></div>
+          {/* {<InfoBar room={room} /> */}
+          {/* <Messages messages={messages} name={name} />
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />  */}
+          <input 
+            value = {message}
+            onChange = {(event) => setMessage(event.target.value)}
+            onKeyPress = {event => event.key === 'Enter' ? sendMessage(event) : null}
+          />
       </div>
       {/* <TextContainer users={users}/> */}
     </div>
