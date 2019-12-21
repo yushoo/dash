@@ -9,6 +9,7 @@ import io from "socket.io-client";
 
 import './Chat.css';
 import InfoBar from '../InfoBar/InfoBar';
+import Input from '../InfoBar/InfoBar';
 
 let socket;
 
@@ -72,7 +73,7 @@ const Chat = ({ location }) => {
       <div className="container">
           {/* pass room into infoBar */}
           <InfoBar room={room} />
-          // {/* <Messages messages={messages} name={name} />
+           {/* <Messages messages={messages} name={name} />
           // <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />  */}
           <input 
             value = {message}
