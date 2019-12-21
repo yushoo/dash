@@ -9,7 +9,7 @@ import io from "socket.io-client";
 
 import './Chat.css';
 import InfoBar from '../InfoBar/InfoBar';
-import Input from '../InfoBar/InfoBar';
+import Input from '../Input/Input';
 
 let socket;
 
