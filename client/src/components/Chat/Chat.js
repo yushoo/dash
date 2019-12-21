@@ -70,7 +70,6 @@ const Chat = ({ location }) => {
   return (
     <div className="outerContainer">
       <div className="container">
-        <div><p>WELCOME {name} TO {room}</p></div>
           {/* pass room into infoBar */}
           <InfoBar room={room} />
           // {/* <Messages messages={messages} name={name} />
