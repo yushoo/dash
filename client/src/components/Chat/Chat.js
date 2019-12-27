@@ -19,7 +19,8 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   //array of all messages of chat instance
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'localhost:5000';
+  //const ENDPOINT = 'localhost:5000';
+  const ENDPOINT = 'https://dash-react-chat-app.herokuapp.com/';
 
   //to connect to join component
   useEffect(() => {

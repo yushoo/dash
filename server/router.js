@@ -2,13 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 //route for '/'
-router.get('/', (req, res) => {
-    res.send('Server is up and running');
-});
-
-//route for '/chat'
-router.get('/chat', (req, res) => {
-    res.send('Chat route');
-});
+router.get("/", (req, res) => {
+    res.send({ response: "Server is up and running." }).status(200);
+  });
 
 module.exports = router; 
