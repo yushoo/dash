@@ -72,7 +72,9 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
                 - 'sendMessage' - message -> use socket.id to get user information. Send to room user name and text message. The client side has a socket listener for 'message.'
                 - 'disconnect' - -> remove user from chat and emit a message to the room that said user has left. Update the users in room information.
     - router.js
+        - Usually I would create routes instead of using links in the front end, which is why the only route is the landing page. This was the case because it was easier to send info via url than to send a json object. 
     - users.js
+        - 
 - Client:
     - App.js
     - index.js
