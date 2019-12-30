@@ -58,8 +58,19 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
 
 # Overview of Dash
 - Two directories: Client and Server
+- The socket creates a connection between users in a chat room. The chat messages are stored in each users browser. If a user were to leave, all the chat information would disappear. 
 - Server:
-    - index.js
+    - index.js 
+        - Dependencies: express, socket.io, cors
+        - Deconstruct helper methods from './users.js'
+        - Tell application to use express
+        - Create HTTP server object
+        - initialize socketio on server object and listen on process.env.PORT or 5000 for local development.
+        - socket methods
+            - when client emits 'connect' await the following messages
+                - 'join' - (objects: name, room) -> add user with addUser helper method. Connect the user to the room with socket.join(room id). Emit a message to the user a welcome message. Broadcast to all users in the room that a new user has joined the chat room.
+                - 'sendMessage' - message -> use socket.id to get user information. Send to room user name and text message. The client side has a socket listener for 'message.'
+                - 'disconnect' - -> remove user from chat and emit a message to the room that said user has left. Update the users in room information.
     - router.js
     - users.js
 - Client:
