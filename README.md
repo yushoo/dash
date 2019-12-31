@@ -76,17 +76,21 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
     - users.js
         - contains all the helper methods used in index.js 
         - addUser: 
+            - Method to add user to a chat room
             - takes in id, name, room sent via client
             - checks if existing user in chatroom
             - creat user const and push to users array
             - returns user
-        - removeUser: 
+        - removeUser:
+            - Method to remove a user from a chat room 
             - takes in id via client
             - checks if user exists. If user does exist then remove from users array.
         - getUser: 
+            - Method is used in chat when a user posts a message so that everyon in the room can associate messages to the right user. 
             - takes in id via client
             - returns user based on specific id
-        - getUsersInRoom: 
+        - getUsersInRoom:
+            - Method is used to relay to all users in a room when a user has left or join their chat room.  
             - takes in room via client
             - returns an array of all users in a room
 - Client:
