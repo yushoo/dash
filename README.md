@@ -59,7 +59,7 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
 # Overview of Dash
 - Two directories: Client and Server
 - The socket creates a connection between users in a chat room. The chat messages are stored in each users browser. If a user were to leave, all the chat information would disappear. 
-- Server:
+- Server Directory:
     - index.js 
         - Dependencies: express, socket.io, cors
         - Deconstruct helper methods from './users.js'
@@ -93,9 +93,12 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
             - Method is used to relay to all users in a room when a user has left or join their chat room.  
             - takes in room via client
             - returns an array of all users in a room
-- Client:
-    - App.js
+- Client Directory:
     - index.js
+        - When the running npm build, the build file will look for this file. This file will inject react application into single div called root. The div will contain App, which is the root component of dash. 
+    - App.js
+        - Functional component that renders the Router component.
+        - The router component renders components based on certain routes. The routes being '/' and '/chat.'
     - Components:
         - Chat
         - InfoBar
