@@ -74,7 +74,21 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
     - router.js
         - Usually I would create routes instead of using links in the front end, which is why the only route is the landing page. This was the case because it was easier to send info via url than to send a json object. 
     - users.js
-        - 
+        - contains all the helper methods used in index.js 
+        - addUser: 
+            - takes in id, name, room sent via client
+            - checks if existing user in chatroom
+            - creat user const and push to users array
+            - returns user
+        - removeUser: 
+            - takes in id via client
+            - checks if user exists. If user does exist then remove from users array.
+        - getUser: 
+            - takes in id via client
+            - returns user based on specific id
+        - getUsersInRoom: 
+            - takes in room via client
+            - returns an array of all users in a room
 - Client:
     - App.js
     - index.js
