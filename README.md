@@ -114,6 +114,8 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
             - Takes in the the room prop from chat component. 
             - Image link to leave the chat and go back to the root landing page.
         - Input
+            - Stores the user input.
+            - Event handler for when a button is clicked that calls the sendMessage method (passed in from chat component).
         - Join
             - This is the root destination of dash. 
             - contains two state hooks: name and room
@@ -122,5 +124,12 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
                     `/chat?name=${name}&room=${room}`
                 ``` 
             - functional component that returns a div that takes in user input for name and room name.   
-
         - Messages
+            - This component displays on the messages that have been sent in a chat room. 
+            - Uses ScrollToBottom to make it easier for user to stay updated with new messages. 
+            - Maps through all the messages when this component is rendered.
+            ```javascript
+                 <ScrollToBottom className="messages">
+                    {messages.map((message, i) => <div key={i}><Message message={message} name={name}/></div>)}
+                </ScrollToBottom>
+            ```
