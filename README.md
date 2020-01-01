@@ -104,4 +104,8 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
         - InfoBar
         - Input
         - Join
+            - This is the root destination of dash. 
+            - contains two state hooks 
+            - functional component that returns a div that takes in user input for name and room name.   
+
         - Messages
