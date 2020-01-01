@@ -1,6 +1,12 @@
 # dash
 An anonymous chat app built with node.js, socket.io, express, and react.js
 
+# Deployment
+- Server (needs to be on for the chat to work):
+    - https://dash-react-chat-app.herokuapp.com/
+- Client side UI: 
+    - https://dash-client-app.netlify.com
+
 ## The Goal
 My goal with this project is to learn how to use socket.io and reinforce my skills in react.js while also implementing a chat app.
 
