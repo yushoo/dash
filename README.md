@@ -107,7 +107,6 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
             - This is the root destination of dash. 
             - contains two state hooks: name and room
             - name and room needs text in order for the onClick to work. The link stores the user inputted information in the url. 
-                - 
                 ```javascript
                     `/chat?name=${name}&room=${room}`
                 ``` 
