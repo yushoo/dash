@@ -25,7 +25,9 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
 - When real time updates are not required
 - RESTful services are sufficient to get data from the server. (CRUD applications)
 
+--------------------------------------------------
 # Overview of Dash
+--------------------------------------------------
 - Two directories: Client and Server
 - The socket creates a connection between users in a chat room. The chat messages are stored in each users browser. If a user were to leave, all the chat information would disappear. 
 - Server Directory:
