@@ -4,14 +4,12 @@ An anonymous chat app built with node.js, socket.io, express, and react.js
 ## The Goal
 My goal with this project is to learn how to use socket.io and reinforce my skills in react.js while also implementing a chat app.
 
-### Socket.io
-Used for real time data transferring.  
-
-- Command Line with integration with express and socketio. Moment.js is a package that will aid with time in the application: 
-
 --------------------------------------------------
 # Notes
 --------------------------------------------------
+## Socket.io
+Used for real time data transferring.  
+
 ## How deos HTTP protocol work?
 A request is sent via an http url address to a backend server. In response, the server sends back requested information. This connection is called a tcp connection. A new connection is made every single time a request is sent. HTTPS are unidirectional so the sender has to trigger a request and the sender will get a response from the server.
 
