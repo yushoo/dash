@@ -110,6 +110,9 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
             - separate useEffect methods because it is not good to have the methods called whenever an action from the user is done. Only run useEffect for messages when messages has been changed. For the the initializing of the chat room only call functions relevant to that purpose, so the useEffect, working as a lifecycle method, will set up the room and user name and emit to the server that a user has joined.
             - returns the associated components for the chatroom.
         - InfoBar
+            - This component is used to display that status of the user ie online or offline.
+            - Takes in the the room prop from chat component. 
+            - Image link to leave the chat and go back to the root landing page.
         - Input
         - Join
             - This is the root destination of dash. 
