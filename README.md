@@ -101,6 +101,14 @@ Web sockets are bi-directional so the sender can send data and the receiver can 
         - The router component renders components based on certain routes. The routes being '/' and '/chat.'
     - Components:
         - Chat
+            - This component is the ui for user messenging.
+            - Contains five state hooks: name, room, users, message, messages. Name and room are set by the props accessed via url given by the location prop from the join component.
+                ```javascript
+                    const { name, room } = queryString.parse(location.search);
+                ```
+            - set socket endpoint to my server deployed on heroku. I can use the server for all my real time chat applications. 
+            - separate useEffect methods because it is not good to have the methods called whenever an action from the user is done. Only run useEffect for messages when messages has been changed. For the the initializing of the chat room only call functions relevant to that purpose, so the useEffect, working as a lifecycle method, will set up the room and user name and emit to the server that a user has joined.
+            - returns the associated components for the chatroom.
         - InfoBar
         - Input
         - Join
